@@ -74,7 +74,7 @@ sub convert_single_symbol($) {
 # their unicode representation.
 sub convert_latex_symbols($) {
   $_ = $_[0];
-  for my $key (keys %latex_symbols) {
+  for my $key (reverse sort {length $a <=> length $b} keys %latex_symbols) {
     s/\Q$key\E/$latex_symbols{$key}/g;
   }
   return $_;
