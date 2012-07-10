@@ -111,12 +111,13 @@ sub apply_modifier($$$) {
     if ($mode == $mode_normal && $_ eq '^') {
       $mode = $mode_modified;
       next;
-    } elsif ($mode == $mode_modified && $_ eq '{') {
-      $mode = $mode_long;
-      next;
     } elsif ($mode == $mode_modified) {
-      $newtext .= $D{$_} // $_;
-      $mode = $mode_normal;
+      if ($_ eq '{') {
+        $mode = $mode_long;
+      } elsif ($_ ne ' ') {
+        $newtext .= $D{$_} // $_;
+        $mode = $mode_normal;
+      } 
       next;
     } elsif ($mode == $mode_long && $_ eq '}') {
       $mode = $mode_normal;
