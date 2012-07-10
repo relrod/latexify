@@ -4,8 +4,29 @@ use strict;
 use warnings;
 
 use File::Basename;
+use vars qw($VERSION, %IRSSI);
+$version = '0.001';
+%IRSSI = (
+  authors => 'Patrick Xia',
+  contact => 'patrick.xia@gmail.com',
+  name => 'latexify',
+  description => 'Latexify outgoing messages',
+  license => 'BSD',
+  url => 'none',
+  modules => 'File::Basename'
+);
 
-# this is just a direct no-brainer port of the python
+sub evt_send_text {
+  my ($line, $server_rec, $wi_item_rec) = @_;
+  if (convert($line) ne $line) {
+    Irssi::signal_emit('send text', convert($line), $server_rec, $wi_item_rec);
+    Irssi::signal_stop();
+  }
+}
+
+Irssi::signal_add_first('send text', 'evt_send_text');
+
+# the following is just a direct no-brainer port of the python
 # so some (or most!) of it may seem like a kludge
 
 # except: 
@@ -135,8 +156,3 @@ sub load_dict($$) {
   }
 }
 
-while (<>) {
-  chomp;
-  print convert($_);
-  print "\n";
-}
