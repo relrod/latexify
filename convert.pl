@@ -3,7 +3,8 @@ use utf8;
 use strict;
 use warnings;
 
-use Data::Dumper;
+use File::Basename;
+
 # this is just a direct no-brainer port of the python
 # so some (or most!) of it may seem like a kludge
 
@@ -23,7 +24,8 @@ my
    %textfrak,
    %textmono);
 
-my $pfx = "data";
+my $dir = dirname(__FILE__);
+my $pfx = "$dir/data";
 
 sub convert($) {
   my $s = $_[0];
