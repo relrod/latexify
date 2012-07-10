@@ -4,8 +4,8 @@ use strict;
 use warnings;
 
 use File::Basename;
-use vars qw($VERSION, %IRSSI);
-$version = '0.001';
+use vars qw($VERSION %IRSSI);
+$VERSION = '0.001';
 %IRSSI = (
   authors => 'Patrick Xia',
   contact => 'patrick.xia@gmail.com',

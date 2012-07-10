@@ -5,3 +5,5 @@ Forked off ypsu's latex-to-unicode python-tkinter tool
 because it exposes the latex <-> unicode mapping of
 Jos van den Oever's unilatex.vim in a easy-to-use format.
 
+You need to symlink data/ into your .irssi/scripts too (yeah, i know...)
+
