@@ -1,1 +1,7 @@
-This is now a irssi plugin that intercepts any line of text you type and tries to unicode-ify it.
+This is an irssi plugin that intercepts any line of text 
+you type and tries to unicode-ify it using LaTeX syntax.
+
+Forked off ypsu's latex-to-unicode python-tkinter tool
+because it exposes the latex <-> unicode mapping of
+Jos van den Oever's unilatex.vim in a easy-to-use format.
+
