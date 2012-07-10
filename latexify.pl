@@ -135,14 +135,14 @@ sub apply_modifier($$$) {
 
 sub load_data() {
   load_dict("$pfx/symbols", \%latex_symbols);
-	load_dict("$pfx/subscripts", \%subscripts);
-	load_dict("$pfx/superscripts", \%superscripts);
-	load_dict("$pfx/textbb", \%textbb);
-	load_dict("$pfx/textbf", \%textbf);
-	load_dict("$pfx/textit", \%textit);
-	load_dict("$pfx/textcal", \%textcal);
-	load_dict("$pfx/textfrak", \%textfrak);
-	load_dict("$pfx/textmono", \%textmono);
+  load_dict("$pfx/subscripts", \%subscripts);
+  load_dict("$pfx/superscripts", \%superscripts);
+  load_dict("$pfx/textbb", \%textbb);
+  load_dict("$pfx/textbf", \%textbf);
+  load_dict("$pfx/textit", \%textit);
+  load_dict("$pfx/textcal", \%textcal);
+  load_dict("$pfx/textfrak", \%textfrak);
+  load_dict("$pfx/textmono", \%textmono);
 }
 
 sub load_dict($$) {
